@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody.gd" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="BoxShape" id=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( -0.215055, 0.908676, -0.357854, 0.468057, 0.417502, 0.778855, 0.857131, 4.98118e-07, -0.515098, -1.04795, 19.6742, -5.85147 )
+fov = 73.125
+
+[node name="KinematicBodyL" type="KinematicBody" parent="."]
+
+[node name="CollisionShape3" type="CollisionShape" parent="KinematicBodyL"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.26036, 13.0299, -0.0652184 )
+shape = SubResource( 3 )
+
+[node name="CSGBox" type="CSGBox" parent="KinematicBodyL/CollisionShape3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04107, -2.38754, 0.0357146 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="KinematicBodyL"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23962, 10.6514, 0.0888982 )
+shape = SubResource( 2 )
+
+[node name="CSGBox" type="CSGBox" parent="KinematicBodyL/CollisionShape2"]
+transform = Transform( 1, 0, 0, 0, 4, 0, 0, 0, 1, 0.00680137, 2.99272, -0.0999014 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBodyL"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.229509, 10.6424, -0.0295038 )
+shape = SubResource( 1 )
+disabled = true
+
+[node name="CSGBox" type="CSGBox" parent="KinematicBodyL/CollisionShape"]
